@@ -1,1356 +1,830 @@
 /* =====================================================
-   EXOTIC HONEY
-   STYLE.CSS
+   EXOTIC HONEY MOTEL - STYLE.CSS
+   Paleta Oficial: Magenta Neón + Azul Neón + Negro
    ===================================================== */
 
-
-/* ================= VARIABLES ================= */
-
+/* =====================================================
+   1. VARIABLES GLOBALES Y PALETA OFICIAL
+   ===================================================== */
 :root {
+    /* Fondos Oscuros */
+    --black: #050505;
+    --black-light: #0d0d0d;
+    --black-card: #141414;
 
-    --black: #090909;
-    --black-light: #111111;
-    --black-card: #171717;
+    /* Acentos Neón Oficiales (Instagram Referencias) */
+    --neon-pink: #ff0055;
+    --neon-magenta: #e60067;
+    --neon-blue: #00d2ff;
+    
+    /* Efectos de Brillo */
+    --pink-glow: rgba(255, 0, 85, 0.5);
+    --blue-glow: rgba(0, 210, 255, 0.4);
+    --border-pink: rgba(255, 0, 85, 0.4);
 
-    --gold: #d4af37;
-    --gold-light: #f0d477;
-    --gold-dark: #9d7b19;
-
+    /* Textos y Neutrales */
     --white: #ffffff;
-    --gray: #b7b7b7;
-    --gray-dark: #777777;
+    --gray: #b0b0b0;
+    --gray-dark: #444444;
 
+    /* Dimensiones */
     --max-width: 1200px;
-
 }
 
-
-/* ================= RESET ================= */
-
+/* =====================================================
+   2. RESET Y ESTILOS BASE (MOBILE FIRST)
+   ===================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
-    background: var(--black);
-
+    background-color: var(--black);
     color: var(--white);
-
     font-family: "Montserrat", sans-serif;
-
     line-height: 1.6;
-
+    overflow-x: hidden;
 }
-
 
 img {
-
     width: 100%;
-
     display: block;
-
     object-fit: cover;
-
 }
-
 
 a {
-
     color: inherit;
-
     text-decoration: none;
-
 }
 
+.page-padding {
+    padding-top: 80px;
+}
 
-/* ================= HEADER ================= */
+.section {
+    padding: 60px 5%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
 
+/* Títulos de Sección */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title p {
+    color: var(--neon-pink);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    font-family: "Cinzel", serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.section-title h2 span {
+    color: var(--neon-pink);
+    text-shadow: 0 0 8px var(--pink-glow);
+}
+
+/* =====================================================
+   3. COMPONENTES GLOBALES (HEADER, BUTTONS, FOOTER)
+   ===================================================== */
+
+/* --- HEADER --- */
 .header {
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
-    height: 80px;
-
+    height: 70px;
     z-index: 1000;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     padding: 0 5%;
-
-    background: rgba(9, 9, 9, 0.92);
-
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-pink);
 }
-
 
 .logo {
-
     font-family: "Cinzel", serif;
-
-    font-size: 22px;
-
+    font-size: 18px;
     font-weight: 700;
-
-    letter-spacing: 3px;
-
+    letter-spacing: 2px;
 }
-
 
 .logo span {
-
-    color: var(--gold);
-
+    color: var(--neon-pink);
+    text-shadow: 0 0 6px var(--pink-glow);
 }
-
 
 .navbar {
-
     display: flex;
-
-    gap: 30px;
-
+    gap: 15px;
 }
-
 
 .navbar a {
-
-    color: #ddd;
-
-    font-size: 13px;
-
+    color: var(--gray);
+    font-size: 11px;
     text-transform: uppercase;
-
     letter-spacing: 1px;
-
     transition: 0.3s;
-
 }
 
-
+.navbar a.active,
 .navbar a:hover {
-
-    color: var(--gold);
-
+    color: var(--neon-pink);
 }
 
+.header-whatsapp {
+    display: none;
+}
 
-/* ================= BUTTONS ================= */
-
+/* --- BOTONES GLOBALES --- */
 .btn-primary,
 .btn-secondary,
 .btn-whatsapp,
-.room-button {
-
+.btn-pricing {
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
-    padding: 14px 25px;
-
-    border-radius: 3px;
-
-    font-size: 12px;
-
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 11px;
     font-weight: 700;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
-
-    transition: 0.3s;
-
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
-
 
 .btn-primary {
-
-    background: var(--gold);
-
-    color: #111;
-
+    background: var(--neon-pink);
+    color: #fff;
+    box-shadow: 0 0 12px var(--pink-glow);
 }
-
 
 .btn-primary:hover {
-
-    background: var(--gold-light);
-
+    background: var(--neon-magenta);
     transform: translateY(-2px);
-
 }
-
 
 .btn-secondary {
-
-    border: 1px solid var(--gold);
-
-    color: var(--gold);
-
+    border: 1px solid var(--neon-pink);
+    color: #fff;
 }
-
 
 .btn-secondary:hover {
-
-    background: var(--gold);
-
-    color: #111;
-
+    background: var(--neon-pink);
+    box-shadow: 0 0 12px var(--pink-glow);
 }
-
 
 .btn-whatsapp {
-
     background: #25D366;
-
-    color: white;
-
+    color: #fff;
 }
-
 
 .btn-whatsapp:hover {
-
     background: #20b957;
-
-    transform: translateY(-2px);
-
-}
-
-
-/* ================= HERO ================= */
-
-.hero {
-
-    height: 100vh;
-
-    min-height: 650px;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    background-image: url("img/portada.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-}
-
-
-.hero-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.85),
-            rgba(0,0,0,.45),
-            rgba(0,0,0,.85)
-        );
-
-}
-
-
-.hero-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 800px;
-
-    padding: 20px;
-
-}
-
-
-.hero-small {
-
-    color: var(--gold);
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 20px;
-
-}
-
-
-.hero h1 {
-
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(60px, 10vw, 125px);
-
-    line-height: .9;
-
-    letter-spacing: 8px;
-
-}
-
-
-.hero h1 span {
-
-    display: block;
-
-    color: var(--gold);
-
-}
-
-
-.hero-description {
-
-    max-width: 600px;
-
-    margin: 35px auto;
-
-    color: #ddd;
-
-    font-size: 16px;
-
-}
-
-
-.hero-buttons {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-
-}
-
-
-/* ================= GENERAL SECTIONS ================= */
-
-.section {
-
-    padding: 110px 5%;
-
-    max-width: 1400px;
-
-    margin: auto;
-
-}
-
-
-.section-title {
-
-    text-align: center;
-
-    margin-bottom: 60px;
-
-}
-
-
-.section-title p {
-
-    color: var(--gold);
-
-    font-size: 11px;
-
-    letter-spacing: 4px;
-
-    font-weight: 700;
-
-    margin-bottom: 12px;
-
-}
-
-
-.section-title h2 {
-
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(35px, 5vw, 55px);
-
-}
-
-
-.section-title h2 span {
-
-    color: var(--gold);
-
-}
-
-
-.section-description {
-
-    color: var(--gray);
-
-    margin: 15px auto 0;
-
-    max-width: 600px;
-
-}
-
-
-.section-title.left {
-
-    text-align: left;
-
-}
-
-
-/* ================= ABOUT ================= */
-
-.about {
-
-    background: var(--black);
-
-}
-
-
-.about-container {
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 70px;
-
-    align-items: center;
-
-}
-
-
-.about-image {
-
-    height: 550px;
-
-    overflow: hidden;
-
-}
-
-
-.about-image img {
-
-    height: 100%;
-
-    transition: .5s;
-
-}
-
-
-.about-image:hover img {
-
-    transform: scale(1.04);
-
-}
-
-
-.about-text h3 {
-
-    font-family: "Cinzel", serif;
-
-    font-size: 35px;
-
-    margin: 20px 0;
-
-}
-
-
-.about-text p {
-
-    color: var(--gray);
-
-    margin-bottom: 20px;
-
-}
-
-
-.gold-line {
-
-    display: block;
-
-    width: 70px;
-
-    height: 3px;
-
-    background: var(--gold);
-
-}
-
-
-/* ================= SERVICES ================= */
-
-.services {
-
-    background: #0d0d0d;
-
-    max-width: none;
-
-}
-
-
-.services-grid {
-
-    max-width: var(--max-width);
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 20px;
-
-}
-
-
-.service-card {
-
-    background: var(--black-card);
-
-    padding: 40px 25px;
-
-    text-align: center;
-
-    border: 1px solid #222;
-
-    transition: .3s;
-
-}
-
-
-.service-card:hover {
-
-    border-color: var(--gold);
-
-    transform: translateY(-5px);
-
-}
-
-
-.service-icon {
-
-    color: var(--gold);
-
-    font-size: 32px;
-
-    margin-bottom: 20px;
-
-}
-
-
-.service-card h3 {
-
-    font-size: 16px;
-
-    margin-bottom: 12px;
-
-}
-
-
-.service-card p {
-
-    color: var(--gray);
-
-    font-size: 13px;
-
-}
-
-
-/* ================= ROOMS ================= */
-
-.rooms {
-
-    background: var(--black);
-
-}
-
-
-.rooms-grid {
-
-    max-width: var(--max-width);
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-
-}
-
-
-.room-card {
-
-    background: var(--black-card);
-
-    border: 1px solid #252525;
-
-    overflow: hidden;
-
-}
-
-
-.room-image {
-
-    height: 280px;
-
-    position: relative;
-
-    overflow: hidden;
-
-}
-
-
-.room-image img {
-
-    height: 100%;
-
-    transition: .5s;
-
-}
-
-
-.room-card:hover .room-image img {
-
-    transform: scale(1.06);
-
-}
-
-
-.featured-label {
-
-    position: absolute;
-
-    top: 15px;
-
-    left: 15px;
-
-    z-index: 2;
-
-    background: var(--gold);
-
-    color: #111;
-
-    padding: 8px 12px;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-}
-
-
-.room-content {
-
-    padding: 30px;
-
-}
-
-
-.room-number {
-
-    color: var(--gold);
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    font-weight: 700;
-
-}
-
-
-.room-content h3 {
-
-    font-family: "Cinzel", serif;
-
-    font-size: 25px;
-
-    margin: 12px 0;
-
-}
-
-
-.room-content p {
-
-    color: var(--gray);
-
-    font-size: 13px;
-
-    margin-bottom: 20px;
-
-}
-
-
-.room-info {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 6px;
-
-    color: #ccc;
-
-    font-size: 12px;
-
-}
-
-
-.price {
-
-    margin: 25px 0;
-
-    border-top: 1px solid #333;
-
-    padding-top: 20px;
-
-}
-
-
-.price small {
-
-    display: block;
-
-    color: var(--gold);
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.price strong {
-
-    font-family: "Cinzel", serif;
-
-    font-size: 27px;
-
-}
-
-
-.room-button {
-
-    width: 100%;
-
-    border: 1px solid var(--gold);
-
-    color: var(--gold);
-
-}
-
-
-.room-button:hover {
-
-    background: var(--gold);
-
-    color: #111;
-
-}
-
-
-/* ================= GALLERY ================= */
-
-.gallery {
-
-    background: #0d0d0d;
-
-    max-width: none;
-
-}
-
-
-.gallery-grid {
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    grid-auto-rows: 250px;
-
-    gap: 12px;
-
-}
-
-
-.gallery-item {
-
-    overflow: hidden;
-
-}
-
-
-.gallery-item img {
-
-    height: 100%;
-
-    transition: .5s;
-
-}
-
-
-.gallery-item:hover img {
-
-    transform: scale(1.08);
-
-}
-
-
-.gallery-large {
-
-    grid-column: span 2;
-
-    grid-row: span 2;
-
-}
-
-
-/* ================= LOCATION ================= */
-
-.location {
-
-    background: var(--black);
-
-    max-width: none;
-
-}
-
-
-.location-container {
-
-    max-width: var(--max-width);
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 70px;
-
-    align-items: center;
-
-}
-
-
-.location-detail {
-
-    display: flex;
-
-    gap: 20px;
-
-    margin-bottom: 30px;
-
-}
-
-
-.detail-icon {
-
-    color: var(--gold);
-
-    font-size: 25px;
-
-}
-
-
-.location-detail h3 {
-
-    font-size: 15px;
-
-    margin-bottom: 5px;
-
-}
-
-
-.location-detail p {
-
-    color: var(--gray);
-
-    font-size: 13px;
-
-}
-
-
-.map-container {
-
-    height: 500px;
-
-    border: 1px solid #333;
-
-}
-
-
-.map-container iframe {
-
-    width: 100%;
-
-    height: 100%;
-
-    border: 0;
-
-    filter: grayscale(100%) invert(90%);
-
-}
-
-
-/* ================= CTA ================= */
-
-.cta {
-
-    min-height: 450px;
-
-    position: relative;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    background-image: url("img/exterior.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-}
-
-
-.cta-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background: rgba(0,0,0,.75);
-
-}
-
-
-.cta-content {
-
-    position: relative;
-
-    z-index: 2;
-
-}
-
-
-.cta-content > p {
-
-    color: var(--gold);
-
-    letter-spacing: 4px;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    margin-bottom: 15px;
-
-}
-
-
-.cta h2 {
-
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(35px, 5vw, 60px);
-
-    margin-bottom: 30px;
-
-}
-
-
-.cta h2 span {
-
-    color: var(--gold);
-
-}
-
-
-/* ================= FOOTER ================= */
-
-.footer {
-
-    background: #050505;
-
-    border-top: 1px solid #222;
-
-}
-
-
-.footer-container {
-
-    max-width: var(--max-width);
-
-    margin: auto;
-
-    padding: 70px 5%;
-
-    display: grid;
-
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-
-    gap: 50px;
-
-}
-
-
-.footer-brand p {
-
-    color: var(--gray);
-
-    font-size: 13px;
-
-    max-width: 300px;
-
-    margin-top: 20px;
-
-}
-
-
-.footer h3 {
-
-    font-size: 13px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
-
-    color: var(--gold);
-
-    margin-bottom: 20px;
-
-}
-
-
-.footer-links {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 8px;
-
-}
-
-
-.footer-links a {
-
-    color: var(--gray);
-
-    font-size: 13px;
-
-}
-
-
-.footer-links a:hover {
-
-    color: var(--gold);
-
-}
-
-
-.footer-contact p {
-
-    color: var(--gray);
-
-    font-size: 13px;
-
-    margin-bottom: 8px;
-
-}
-
-
-.footer-contact a,
-.footer-social a {
-
-    color: var(--gold);
-
-    font-size: 13px;
-
-}
-
-
-.footer-bottom {
-
-    max-width: var(--max-width);
-
-    margin: auto;
-
-    padding: 20px 5%;
-
-    border-top: 1px solid #222;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    color: #666;
-
-    font-size: 11px;
-
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
 }
-
-
-/* ================= WHATSAPP FLOAT ================= */
 
+/* Botón flotante WhatsApp */
 .whatsapp-float {
-
     position: fixed;
-
-    right: 25px;
-
-    bottom: 25px;
-
-    width: 60px;
-
-    height: 60px;
-
+    right: 20px;
+    bottom: 20px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-
     background: #25D366;
-
-    color: white;
-
+    color: #fff;
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    font-size: 30px;
-
+    font-size: 26px;
     z-index: 999;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,.5);
-
-    transition: .3s;
-
+    box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
 }
-
 
 .whatsapp-float:hover {
-
     transform: scale(1.1);
-
 }
 
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1000px) {
-
-    .navbar {
-
-        display: none;
-
-    }
-
-    .services-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-    .rooms-grid {
-
-        grid-template-columns: 1fr 1fr;
-
-    }
-
-    .about-container {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .location-container {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .footer-container {
-
-        grid-template-columns: 1fr 1fr;
-
-    }
-
+/* --- FOOTER GLOBAL --- */
+.footer {
+    background: #020202;
+    border-top: 1px solid rgba(255, 0, 85, 0.2);
 }
 
+.footer-container {
+    padding: 40px 5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
 
-@media (max-width: 700px) {
+.footer-brand p {
+    color: var(--gray);
+    font-size: 12px;
+    margin-top: 10px;
+}
 
-    .header {
+.footer h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--neon-pink);
+    margin-bottom: 12px;
+}
 
-        height: 70px;
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
+.footer-links a {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: var(--neon-pink);
+}
+
+.footer-contact p {
+    color: var(--gray);
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.footer-social a {
+    color: var(--neon-pink);
+    font-size: 12px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.footer-bottom {
+    padding: 20px 5%;
+    border-top: 1px solid #141414;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    color: var(--gray-dark);
+    font-size: 11px;
+}
+
+/* =====================================================
+   4. BLOQUE: INICIO (INDEX.HTML)
+   ===================================================== */
+
+/* HERO / PORTADA */
+.hero {
+    height: 100vh;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("img/portada.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.5) 50%, rgba(5,5,5,1) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero-small {
+    color: var(--neon-pink);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: "Cinzel", serif;
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: 3px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--neon-pink);
+    text-shadow: 0 0 15px var(--pink-glow);
+}
+
+.hero-description {
+    margin: 20px auto;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+/* SECCIÓN NOSOTROS EN HOME */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.about-image {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-pink);
+}
+
+.about-image img {
+    height: 100%;
+}
+
+.about-text h3 {
+    font-family: "Cinzel", serif;
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.about-text p {
+    color: var(--gray);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.gold-line {
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: var(--neon-pink);
+    box-shadow: 0 0 8px var(--pink-glow);
+}
+
+/* SECCIÓN SERVICIOS */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.service-card {
+    background: var(--black-card);
+    padding: 25px 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #1f1f1f;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 10px var(--pink-glow);
+}
+
+.service-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.service-card h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+/* SECCIÓN UBICACIÓN EN HOME */
+.location-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.location-detail {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-icon {
+    font-size: 22px;
+    color: var(--neon-pink);
+}
+
+.location-detail h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.location-detail p {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.map-container {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-pink);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+   filter: none; /* Quita el filtro gris */
+}
+
+/* CTA BANNER */
+.cta {
+    padding: 60px 5%;
+    position: relative;
+    text-align: center;
+    background: linear-gradient(180deg, #120007 0%, var(--black) 100%);
+    border-top: 1px solid var(--border-pink);
+}
+
+.cta-content > p {
+    color: var(--neon-pink);
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cta h2 {
+    font-family: "Cinzel", serif;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* =====================================================
+    BLOQUE: HABITACIONES (HABITACIONES.HTML)
+   ===================================================== */
+
+/* --- AMENIDADES Y PILLS --- */
+.features-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.feature-pill {
+    background: var(--black-card);
+    border: 1px solid var(--border-pink);
+    padding: 10px 16px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--white);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.pill-icon {
+    font-size: 16px;
+}
+
+/* --- TARJETAS DE TARIFAS Y PRECIOS --- */
+.pricing-cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.pricing-card {
+    background: #0d0106;
+    border: 2px solid var(--neon-pink);
+    border-radius: 16px;
+    padding: 25px 20px;
+    position: relative;
+    box-shadow: 0 0 20px var(--pink-glow), inset 0 0 15px rgba(255, 0, 85, 0.15);
+    text-align: center;
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--neon-pink);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 12px;
+    letter-spacing: 1px;
+    box-shadow: 0 0 8px var(--pink-glow);
+}
+
+.pricing-header h3 {
+    font-family: "Cinzel", serif;
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 0 0 8px var(--neon-pink);
+    letter-spacing: 2px;
+}
+
+.pricing-subtitle {
+    color: var(--neon-blue);
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.time-price-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px 5px;
+}
+
+.time-title {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.price-value {
+    display: block;
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 4px;
+}
+
+.highlight-time {
+    border-color: var(--neon-pink);
+    background: rgba(255, 0, 85, 0.1);
+}
+
+.highlight-time .price-value {
+    color: #fff;
+    font-weight: 700;
+}
+
+.btn-pricing {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--neon-pink);
+    color: #fff;
+    box-shadow: 0 0 10px var(--pink-glow);
+}
+
+.btn-pricing:hover {
+    background: var(--neon-pink);
+    color: #fff;
+}
+
+/* --- GALERÍA DE LAS 6 HABITACIONES --- */
+.six-rooms-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.room-gallery-card {
+    background: var(--black-card);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #1f1f1f;
+    transition: transform 0.3s ease;
+}
+
+.featured-border {
+    border-color: var(--border-pink);
+}
+
+.room-gallery-image {
+    position: relative;
+    height: 220px;
+}
+
+.room-gallery-image img {
+    height: 100%;
+}
+
+.room-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.jacuzzi-tag {
+    border-color: var(--neon-pink);
+    color: #fff;
+    background: rgba(230, 0, 103, 0.85);
+}
+
+.room-gallery-info {
+    padding: 18px;
+}
+
+.room-gallery-info h3 {
+    font-family: "Cinzel", serif;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.room-gallery-info p {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+/* =====================================================
+    BLOQUE: NOSOTROS (NOSOTROS.HTML)
+   ===================================================== */
+.about-hero {
+    text-align: center;
+    padding: 40px 5% 20px;
+}
+
+.about-hero h1 {
+    font-family: "Cinzel", serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.about-values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.value-card {
+    background: var(--black-card);
+    border: 1px solid #1f1f1f;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.value-card h3 {
+    color: var(--neon-pink);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+/* =====================================================
+    RESPONSIVO: TABLET (min-width: 768px)
+   ===================================================== */
+@media (min-width: 768px) {
+    .section {
+        padding: 80px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 36px;
     }
 
     .header-whatsapp {
-
-        display: none;
-
+        display: inline-flex;
     }
 
-    .hero {
-
-        min-height: 600px;
-
-    }
-
+    /* Hero */
     .hero h1 {
-
-        font-size: 55px;
-
-        letter-spacing: 4px;
-
-    }
-
-    .hero-small {
-
-        letter-spacing: 2px;
-
-    }
-
-    .section {
-
-        padding: 80px 6%;
-
-    }
-
-    .services-grid,
-    .rooms-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .gallery-grid {
-
-        grid-template-columns: 1fr 1fr;
-
-        grid-auto-rows: 180px;
-
-    }
-
-    .gallery-large {
-
-        grid-column: span 2;
-
-        grid-row: span 1;
-
-    }
-
-    .about-image {
-
-        height: 350px;
-
-    }
-
-    .map-container {
-
-        height: 350px;
-
-    }
-
-    .footer-container {
-
-        grid-template-columns: 1fr;
-
-        padding: 50px 7%;
-
-    }
-
-    .footer-bottom {
-
-        flex-direction: column;
-
-        gap: 8px;
-
-        padding: 20px 7%;
-
-    }
-
-}
-
-
-@media (max-width: 450px) {
-
-    .hero h1 {
-
-        font-size: 45px;
-
+        font-size: 70px;
     }
 
     .hero-buttons {
-
-        flex-direction: column;
-
+        flex-direction: row;
+        justify-content: center;
     }
 
-    .hero-buttons a {
-
-        width: 100%;
-
+    /* Home Layouts */
+    .about-container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
     }
 
-    .gallery-grid {
-
-        grid-template-columns: 1fr;
-
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .gallery-large {
-
-        grid-column: span 1;
-
+    .location-container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
     }
 
+    /* Habitaciones Page */
+    .pricing-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .six-rooms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =====================================================
+    RESPONSIVO: DESKTOP / PC (min-width: 1024px)
+   ===================================================== */
+@media (min-width: 1024px) {
+    .header {
+        height: 80px;
+        padding: 0 8%;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .navbar {
+        gap: 25px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 90px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .six-rooms-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
 }
